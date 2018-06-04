@@ -1,0 +1,32 @@
+<h1>Add a Friendship</h1>
+ 
+<%= form_with(model: @member, local: true) do |form| %>
+ 
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@member.errors.count, "error") %> prohibited
+        this friendship:
+      </h2>
+      <ul>
+        <% @member.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+
+ <p>Choose a member to be friends with <%= @member.name %> </p>
+  <p>
+  	
+    <%= form.label :member %>
+    <%= form.collection_select(:id, Member.all, :id, :name) %>
+  </p>
+
+    <%= form.submit 'Add Friend'%>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', members_path %>

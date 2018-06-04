@@ -1,0 +1,45 @@
+
+<li>
+  <ul>
+<%= link_to 'New Member', new_member_path %></ul>
+</li>
+
+<h1>Listing members</h1>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Website</th>
+    <th></th>
+  </tr>
+ 
+  <% @members.each do |member| %>
+    <tr>
+      <td><%= member.name %></td>
+      <td><%= member.website %></td>
+      <td><%= link_to 'Show', member_path(member) %></td>
+      <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<!-- <h3>Add Friendship</h3>
+<%= form_with scope: :member, url: members_path, local: true do |form| %>
+  <p>
+    <%= form.label :first_member %>
+    <%= select("name", "member_id", Member.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Select member'}) %>
+  </p>
+ 
+  <p>
+    <%= form.label :second_member %>
+    <%= select("name", "member_id", Member.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Select member'}) %>
+  </p>
+ 
+  <p>
+
+    <%= form.submit "Connect members" %>
+
+  </p>
+<% end %> -->

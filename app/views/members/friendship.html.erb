@@ -1,0 +1,16 @@
+<h3>Add Friendship</h3>
+<%= form_with scope: :member, url: members_path, local: true do |form| %>
+  <p>
+    <%= form.label :first_member %>
+    <%= select("name", "member_id", Member.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Select member'}) %>
+  </p>
+ 
+  <p>
+    <%= form.label :second_member %>
+    <%= select("name", "member_id", Member.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Select member'}) %>
+  </p>
+ 
+  <p>
+    <%= form.submit "Connect members" %>
+  </p>
+<% end %>

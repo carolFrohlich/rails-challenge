@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member1: one
+  member2: one
+
+two:
+  member1: two
+  member2: two

@@ -1,0 +1,18 @@
+
+<h2><%= @member.name %></h2>
+
+ <a href=""><%= @member.website %> </a> 
+
+
+<h3>Interests</h3>
+
+  <% @interests.each do |interest| %>
+    <ul>
+      <li><%= interest.name %></li>
+    </ul>
+  <% end %>
+
+
+<h3>Friends</h3>
+
+<%= link_to 'Back', members_path %>
